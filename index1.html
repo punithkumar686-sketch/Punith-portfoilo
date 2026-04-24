@@ -1,0 +1,93 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, Linkedin, Download } from "lucide-react";
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-black text-white scroll-smooth">
+      {/* NAVBAR */}
+      <nav className="fixed w-full top-0 flex justify-between items-center px-10 py-4 bg-black/60 backdrop-blur-md z-50">
+        <h1 className="font-bold text-lg tracking-wide">Punith Kumar</h1>
+        <div className="flex gap-6 text-sm items-center">
+          <a href="#home">Home</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="/resume.pdf" download className="border px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
+            Resume
+          </a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section id="home" className="h-screen flex flex-col md:flex-row items-center justify-center gap-20 px-10">
+        <div>
+          <motion.h1 initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:0.8}}
+            className="text-5xl font-bold leading-tight">
+            Building Scalable
+            <br/> Operations Systems
+          </motion.h1>
+
+          <p className="mt-6 text-gray-400 max-w-md">
+            Operations Manager with proven 40% efficiency improvement in e-commerce, drop-shipping & business optimization.
+          </p>
+
+          <div className="flex gap-4 mt-8">
+            <a href="https://linkedin.com/in/punith-kumar-116992112" target="_blank">
+              <button className="flex items-center gap-2 bg-blue-600 px-5 py-2 rounded-lg hover:scale-105 transition">
+                <Linkedin size={16}/> LinkedIn
+              </button>
+            </a>
+            <a href="/resume.pdf" download>
+              <button className="flex items-center gap-2 border px-5 py-2 rounded-lg hover:bg-white hover:text-black transition">
+                <Download size={16}/> Resume
+              </button>
+            </a>
+          </div>
+        </div>
+
+        {/* HEXAGON IMAGE */}
+        <motion.div initial={{scale:0.8,opacity:0}} animate={{scale:1,opacity:1}} transition={{duration:1}}>
+          <div className="w-72 h-72 p-1 bg-gradient-to-r from-purple-500 to-indigo-500"
+            style={{clipPath:"polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%)"}}>
+            <img src="/profile.jpg" className="w-full h-full object-cover"
+              style={{clipPath:"polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%)"}}/>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* KPI SECTION (TOP 0.1% FEATURE) */}
+      <section className="px-10 py-20 grid md:grid-cols-3 gap-6 text-center">
+        {[
+          {num:"40%", label:"Efficiency Improved"},
+          {num:"3+", label:"Years Experience"},
+          {num:"1000+", label:"Orders Managed"}
+        ].map((item,i)=> (
+          <div key={i} className="border p-6 rounded-xl">
+            <h2 className="text-3xl font-bold">{item.num}</h2>
+            <p className="text-gray-400 mt-2">{item.label}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* EXPERIENCE */}
+      <section id="experience" className="px-10 py-20">
+        <h2 className="text-3xl font-bold mb-10">Experience</h2>
+        <div className="space-y-6">
+          <div className="border p-6 rounded-xl">
+            <h3 className="font-semibold">Operations & Sales Manager</h3>
+            <p className="text-gray-400">Kanasu Infotech (2023–Present)</p>
+            <p className="mt-3 text-gray-300 text-sm">Improved efficiency by 40%, handled vendors, team & full operations.</p>
+          </div>
+          <div className="border p-6 rounded-xl">
+            <h3 className="font-semibold">Document Verifier</h3>
+            <p className="text-gray-400">Covert Management (2022–2023)</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section id="skills" className="px-10 py-20">
+        <h2 className="text-3xl font-bold mb-10">Skills</h2>
+        <div className="flex flex-wrap gap-3">
+}
